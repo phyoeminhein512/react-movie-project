@@ -13,7 +13,7 @@ import Movie from './components/Movie';
 // import UserLists from './components/UserLists';
 // import NotificationSystem from 'react-notification-system';
 
-// import './App.css';
+import './App.css';
 
 class App extends Component {
 
