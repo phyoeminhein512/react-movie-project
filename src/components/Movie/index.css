@@ -1,0 +1,322 @@
+.movie-backdrop{
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.movie-backdrop:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(34,43,49,1) 60%);
+}
+
+.Movie-wrapper{
+  padding: 9em 12em 9em 6em;
+  position: relative;
+  background-color: #3C4665;
+  color: #50E3C2;
+}
+
+.movie-content{
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-data{
+  padding: 0 25px;
+}
+
+.movie-poster{
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.movie-book-watch{
+  display: flex;
+}
+
+.movie-book-watch a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* .go-back {
+  font-size: 18px;
+  display: block;
+
+  span {
+    color;
+  }
+
+  &-top {
+    margin-bottom: 12px;
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    &-right {
+      display: none;
+    };
+  }
+
+  @media screen and (min-width: $medium-screen) {
+    &-top {
+      display: none;
+    };
+  }
+} */
+
+.movie-title{
+color: #50E3C2;
+}
+
+.movie-overview{
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  color: gray;
+}
+
+.movie-title{
+  font-weight: normal;
+}
+
+.cast-pic{
+  float: left;
+  width: 15%;
+  margin-right: 3%;
+}
+
+.back-to-list{
+  display: flex;
+}
+
+.back-to-list button{
+  padding: 20px;
+  left: 25%;
+  top: 16.5%;
+  bottom: 81%;
+  /* background: #50E3C2; */
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 10px;
+  border-color: #3C4665;
+  color: #50E3C2;
+}
+
+.back-list-text{
+  color: #50E3C2;
+}
+
+.back-list-arrow{
+  color: #50E3C2;
+}
+
+.back-list-text::before{
+  content: 'C';
+}
+
+/* [class*= 'icon-']::before{
+  display: inline-block;
+  font-family: 'Glyphter';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+} */
+/* .movie-overview-title{
+  color: #96A5B1;
+  font-weight: normal;
+  margin-bottom: 0;
+} */
+
+/* .movie-crew-title{
+  color: #96A5B1;
+  font-weight: normal;
+  margin-bottom: 0;
+} */
+
+.movie-feature-crew{
+  padding-top: 50px;
+  padding-bottom: 25px;
+  border-bottom: solid #50E3C2;
+}
+
+.details td{
+  height: 50px;
+}
+
+.role{
+  padding-left: 70px;
+}
+
+.info{
+  padding-left: 70px;
+  color: #50E3C2;
+}
+
+.details td{
+  height: 50px;
+}
+
+.movie-top-cast{
+  padding-top: 50px;
+  padding-bottom: 25px;
+  border-bottom: solid #50E3C2;
+}
+
+.movie-backgrounds{
+  padding-top: 50px;
+  padding-bottom: 25px;
+  border-bottom: solid #50E3C2;
+}
+
+.movie-related-movies{
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.movie-overview{
+  padding-bottom: 25px;
+  color: #bbb;
+}
+
+.movie-actions{
+  display: flex;
+  padding-bottom: 25px;
+  border-bottom: solid #50E3C2;
+}
+
+.movie-details-score{
+  border-bottom: solid #50E3C2;
+  display: flex;
+  margin-top: 30px;
+  height: 150px;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.movie-score {
+  position: relative;
+  flex-basis: 25%;
+  padding-right: 70px;
+  width: 200px;
+  @media screen and (max-width: 900px) {
+    padding-right: 35px;
+  }
+}
+
+.movie-user-score{
+  position: absolute;
+  display: flex;
+  padding-top: 100px;
+  padding-left: 10px;
+}
+
+.CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   *
+   * If you're not using "display: flex", you can remove this style.
+   */
+  width: 70%;
+  padding-bottom: 20px;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #50E3C2;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #353535;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: white;
+  font-size: 26px;
+  font-weight: bold;
+  dominant-baseline: middle;
+  text-anchor: middle;
+  font-family: Helvetica;
+}
+
+.CircularProgressbar .CircularProgressbar-background {
+  fill: #d6d6d6;
+}
+
+/*
+ * Sample background styles. Use these with e.g.:
+ *
+ *   <CircularProgressbar
+ *     className="CircularProgressbar-inverted"
+ *     background
+ *     percentage={50}
+ *   />
+ */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-background {
+  fill: #3e98c7;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-text {
+  fill: #fff;
+  font-size: 26px;
+    font-weight: bold;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-path {
+  stroke: #fff;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
+  stroke: transparent;
+}
+
+.movie-actions__item{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+.movie-action-circle{
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: border 0.4s ease;
+}
+
+
+.movie__action{
+  fill: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: fill 0.4s ease;
+  width: auto;
+  height: 13px;
+}
+
+.movie-actions__item:hover{
+  color: #e53b47;
+}
+
+.movie-actions__item:hover .movie-action-circle{
+  border-color: #e53b47;
+}
+.movie-actions__item:hover .movie__action{
+  fill: #e53b47;
+}

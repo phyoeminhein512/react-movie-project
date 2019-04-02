@@ -1,0 +1,39 @@
+.SearchBar-wrapper{
+  position: relative;
+}
+
+.search-movie-input{
+  width: 100%;
+  height: 100px;
+  padding: 38px 0 0 100px;
+  font-size: 20px;
+  background-color: #222B31;
+  border: 0;
+  color: white;
+  -webkit-appearance: none;
+  text-decoration: none;
+  border-bottom:  solid #FFF;
+} 
+
+
+
+.search-movie-input::placeholder{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-movie-input:focus{
+  outline: 0;
+}
+
+.search-movie-input-icon{
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: auto;
+}
+
+.search-movie-input-icon path{
+  fill: #FFF;
+}

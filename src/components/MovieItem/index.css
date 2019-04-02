@@ -1,0 +1,157 @@
+.list-container__movie-item{
+  flex-basis: 0;
+  margin-right: 3%;
+  margin-bottom: 70px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.list__movie-image{
+  width: 185px;
+  height: 278px;
+  margin: 0 auto 15px;
+  box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.list__movie-image img{
+  display: block;
+}
+
+.list__movie-image-link{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.remove-btn button{
+  width: 100%;
+  height: 40px;
+  background: #50e3c2;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.list__movie-no_image_holder{
+  display: inline-block;
+  background-color: #dbdbdb;
+  width: 185px;
+  height: 278px;
+  position: relative;
+}
+
+.list__movie-no_image_holder span{
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list__movie-no_image_holder:before{
+  content: "No image available";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 24px;
+  border: 1px dotted #b5b5b5;
+  padding: 10px;
+  color: #b5b5b5;
+  text-align: center;
+}
+
+.list__movie-title{
+  height: 60px;
+  display: block;
+  font-size: 16px;
+  color: #FFF;
+  font-family: Helvetica;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+  color: #50E3C2;
+}
+
+.list__movie-vote-average{
+  background-color: #F0A70D;
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  top: 15px;
+  right: -15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);;
+}
+
+
+.list__movie-actions{
+  position: absolute;
+  bottom: -40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: bottom 0.4s ease;
+}
+
+
+.list__movie-action{
+  fill: #FFF;
+  transition: fill 0.4s ease;
+  cursor: pointer;
+  height: 15px;
+  width: auto;
+}
+
+.list-genres-year{
+  display: flex;
+  font-family: Helvetica;
+  font-size: 10px;
+  line-height: 22px;
+  color: #E2E5EF;
+}
+
+.list-genres-year .movie-year{
+  padding-left: 92px;
+}
+
+.list-vote-box{
+  left: 11.69%;
+  right: 75.19%;
+  top: 53.83%;
+  bottom: 42.83%;
+  font-family: SFCompactDisplay;
+  font-size: 24px;
+  line-height: 29px;
+  color: #50E3C2;
+  background: #3C4665;
+  border-radius: 4px;
+  padding-left: .5em;
+}
+
+.action__favorite:hover,
+.action__favorite.is-true{
+  fill: #3be5d9;
+}
+
+.action__watchlater:hover,
+.action__watchlater.is-true{
+  fill: #3be5d9;
+}
+
+.list__movie-image .list__movie-actions{
+  bottom: 0;
+}
