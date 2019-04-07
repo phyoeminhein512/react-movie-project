@@ -59,7 +59,7 @@ class Movie extends Component {
   componentWillMount = () => {
     const MOVIE_ID = this.props.id;
 
-    fetch(`${PATH_BASE}${PATH_MOVIE}/${MOVIE_ID}?api_key=${API_KEY}&append_to_response=videos`)
+    fetch(`${PATH_BASE}${PATH_MOVIE}/${MOVIE_ID}?api_key=${API_KEY}&append_to_response=credits,images,videos`)
     .then(response => response.json())
     .then(movie => (
       this.setState({ movie })
@@ -115,12 +115,19 @@ class Movie extends Component {
       )
     }
   }
-
+  getGenres = (genres) => {
+    var genres_name = [];
+    if(genres){
+      genres.map((item)=> {
+        genres_name.push(item.name);
+      })
+    }
+    return genres_name.toString();
+  }
 
   render () {
 
     const { movie } = this.state;
-
     const movieBackdropStyles = {
       backgroundImage: `url(https://image.tmdb.org/t/p/w1000${movie.backdrop_path})`,
       backgroundRepeat: "no-repeat",
@@ -131,7 +138,10 @@ class Movie extends Component {
       <div className="Movie-wrapper">
       
       <div className="back-to-list">
-      <button style={{padding:"20px"}} onClick={()=> this.props.callbackHideFun()}>Back to list</button>
+      <button style={{padding:"20px"}} onClick={()=> this.props.callbackHideFun()}>
+        <i className="fa fas fa-chevron-left"></i>
+        <span style={{padding:"4px"}}>Back to list</span>
+      </button>
         {/* <span className="back-list-text" onClick={() => this.props.callbackHideFun()} style={{padding:"20px"}}>Back To List</span> */}
       </div>
       
@@ -148,7 +158,7 @@ class Movie extends Component {
       </div> */}
         <div className="movie-backdrop" style={movieBackdropStyles}></div>
         <div className="movie-content">
-          <div>
+          <div className='img-section'>
             <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=""/>
             <div className="movie-book-watch">
              <a href="">Bookmark</a>
@@ -156,6 +166,16 @@ class Movie extends Component {
             </div> 
           <div className="movie-related-movies">
               <h3 className="movie-related-title">Related Movies</h3>
+              {
+
+                this.state.movie.belongs_to_collection &&
+                <div className="related-movies"> 
+                  <div className="related-movie" key={this.state.movie.belongs_to_collection.id}>
+                    <img className="collection-poster" src={`https://image.tmdb.org/t/p/w200${this.state.movie.belongs_to_collection.poster_path}`} alt=""/>
+                    <div>{this.state.movie.belongs_to_collection.name}</div>
+                  </div>  
+                </div>                    
+              } 
             </div>
           </div>
           
@@ -195,22 +215,20 @@ class Movie extends Component {
               />
             </div>
             <div className="movie-user-score">User score</div>
+            <div className="video-player">
+              <i className="fa fas fa-play"></i>
+            </div>
               <div className="details">
-                <table>
-                  <tr>
-                    <td>Genres</td>
-                    {/* <td>{movie.genres[0].name}{movie.genres[1].name}{movie.genres[2].name}</td> */}
-                    {/* <td>{movie.genres && movie.genres[0].name}, {movie.genres && movie.genres[1].name}, {movie.genres && movie.genres[2].name}</td> */}
-                  </tr>
-                  <tr>
-                    <td>Release Year</td>
-                    <td>{movie.release_date && movie.release_date}</td>
-                  </tr>
-                  <tr>
-                    <td>Duration</td>
-                    <td>{movie.runtime}</td>
-                  </tr>
-                </table>
+                <div>Genres</div>
+                {
+                  this.getGenres(this.state.movie.genres)                  
+                }
+                {/* <div>{movie.genres && movie.genres[0].name}, {movie.genres && movie.genres[1].name}, {movie.genres && movie.genres[2].name}</div> */}
+                <div>Release Year</div>
+                <div>{movie.release_date && movie.release_date}</div>
+                <div>Duration</div>
+                <div>{movie.runtime}</div>
+                
               </div>
             </div>
 
@@ -220,51 +238,49 @@ class Movie extends Component {
             </div>
             
             <div className="movie-feature-crew">
+              {
+                this.state.movie.credits &&
+                this.state.movie.credits.crew.slice(0, 5)
+                .map((crew, index) => (
+                  <div key={index} className="crew">
+                    <span className="left">{crew.job}</span>
+                    <span className="right">{crew.name}</span>
+                  </div>
+                ))
+              }
               <h3 className="movie-crew-title">Feature Crew</h3>
-              <div className="details">
-                <table>
-                  <tr>
-                    <td className="">Director</td>
-                    <td className="info">{movie.crew && movie.crew[0].name}</td>
-                    <td className="role">Writer</td>
-                    <td className="info"></td>
-                  </tr>
-                  <tr>
-                    <td className="">Writer</td>
-                    <td className="info"></td>
-                  </tr>
-                  <tr>
-                    <td className="">Writer</td>
-                    <td className="info"></td>
-                  </tr>
-                </table>
-              </div>
+              
             </div>
 
             <div className="movie-top-cast">
               <h3 className="movie-cast-title">Top Billed Cast</h3>
-              <div className="cast-pic">
-
+              <div style={{display:'flex'}}>
+              {
+                this.state.movie.credits && 
+                this.state.movie.credits.cast.slice(0, 5)
+                .map((actor) => 
+                  <div key={actor.id} className="cast-row">                    
+                    <img src={`https://image.tmdb.org/t/p/w${92}${actor.profile_path}` } />                    
+                    <div>{actor.name}</div>
+                  </div>
+                )
+              }  
               </div>
-              <div className="cast-pic">
-                {movie.cast && movie.cast && movie.cast[0].profile_path}
-              </div>
-
-              <div className="cast-pic">
-                zzz
-              </div>
-
-              <div className="cast-pic">
-
-              </div>
-
-              <div className="cast-pic">
-
-              </div>
+                         
+              
             </div>
 
             <div className="movie-backgrounds">
               <h3 className="movie-backgrounds-title">Backgrounds</h3>
+              <div style={{display:"flex"}}>
+              {
+                this.state.movie.images && 
+                this.state.movie.images.backdrops.slice(0, 2)
+                .map( (image)=> (
+                  <img src={`https://image.tmdb.org/t/p/w${300}${image.file_path}` } />
+                ))                
+              }
+              </div>
             </div>
             
             

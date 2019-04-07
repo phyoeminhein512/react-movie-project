@@ -2,3 +2,10 @@
   padding: 10px 2em;
   position: relative;
 }
+.ReactModal__Content{
+  right: 0 !important;
+  padding: 0 !important;
+  left: 300px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}

@@ -18,7 +18,7 @@
 }
 
 .Movie-wrapper{
-  padding: 9em 12em 9em 6em;
+  padding: 16px 32px;
   position: relative;
   background-color: #3C4665;
   color: #50E3C2;
@@ -29,6 +29,13 @@
   position: relative;
   z-index: 1;
 }
+.img-section{
+  flex: 2;
+}
+.movie-data{
+  flex: 4;
+}
+
 
 .movie-data{
   padding: 0 25px;
@@ -319,4 +326,23 @@ color: #50E3C2;
 }
 .movie-actions__item:hover .movie__action{
   fill: #e53b47;
+}
+.video-player{
+  float: left;
+  width: 65px;
+  height: 88px;
+  background: #292929;
+  margin-right: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+.video-player i{
+  display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 10px auto 0;
+    line-height: 40px;
+    font-size: 20px;
 }
