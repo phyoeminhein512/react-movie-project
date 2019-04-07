@@ -2,7 +2,7 @@
   "name": "frontend-react-movie-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://phyoeminhein512.github.io/test",
+  "homepage": "http://phyoeminhein512.github.io/react-movie-project",
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^16.8.6",
