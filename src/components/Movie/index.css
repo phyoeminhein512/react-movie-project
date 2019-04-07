@@ -148,10 +148,37 @@ color: #50E3C2;
   font-weight: normal;
   margin-bottom: 0;
 } */
+.movie-overview-title{
+  color: #FFF;
+}
+
+.movie-crew-title{
+  color: #FFF;
+}
+
+.movie-cast-title{
+  color: #FFF;
+}
+
+.movie-backgrounds-title{
+  color: #FFF;
+}
+
+.movie-related-title{
+  color: #FFF;
+}
+
+.left{
+  color: #FFF;
+}
+
+.right{
+  padding-left: 50px;
+}
 
 .movie-feature-crew{
-  padding-top: 50px;
-  padding-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 75px;
   border-bottom: solid #50E3C2;
 }
 
@@ -224,6 +251,7 @@ color: #50E3C2;
   display: flex;
   padding-top: 100px;
   padding-left: 10px;
+  color: #FFF;
 }
 
 .CircularProgressbar {
@@ -345,4 +373,47 @@ color: #50E3C2;
     margin: 10px auto 0;
     line-height: 40px;
     font-size: 20px;
+}
+.play-video{
+  margin-top: 10px;
+}
+
+.generes-value{
+  padding-left: 75px;
+}
+
+.relase-year{
+  padding-left: 35px;
+}
+
+.duration{
+  padding-left: 60px;
+}
+
+.cast-row{
+  text-align: left;
+  margin-right: 3%;
+  display: block;
+}
+.actor-name{
+  display: block;
+  
+}
+
+.movie-back{
+  display: flex;
+  padding-right: 10px;
+}
+
+.movie-book-watch i{
+  color: #FFF;
+}
+
+.watchlist{
+  padding-left: 120px;
+}
+
+.crew{
+  width: 50%;
+  float: left;
 }

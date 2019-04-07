@@ -44,12 +44,12 @@ class Header extends Component {
           <div className="icon">
             <div className="icon1">
               <a href="/">
-                <button>home</button>
+              <i className="fa fal fa-bars"></i>
               </a>
             </div>
               <div className="icon2">
                 <a href="/watch-list">
-                  <button>WatchList</button>
+                  <i className="fa fa-star-o"></i>
                 </a>
               </div>
           </div>

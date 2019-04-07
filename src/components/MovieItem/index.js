@@ -218,6 +218,7 @@ class MovieItem extends Component {
           <div />
         }
         </div>
+       
       </div>
     );
   }

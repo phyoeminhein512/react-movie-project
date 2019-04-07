@@ -3,7 +3,7 @@ import { API_KEY, PATH_BASE, PATH_MOVIE } from '../../api';
 import { Link } from 'react-router-dom';
 import CircularProgressbar from 'react-circular-progressbar';
 
-
+import Modal from 'react-modal';
 
 import './index.css';
 
@@ -17,6 +17,7 @@ class Movie extends Component {
       movie: {},
       favorited: false,
       toWatchLater: false,
+      openModal: false
     };
 
   }
@@ -145,6 +146,8 @@ class Movie extends Component {
         {/* <span className="back-list-text" onClick={() => this.props.callbackHideFun()} style={{padding:"20px"}}>Back To List</span> */}
       </div>
       
+
+      <Modal />
       {/* <div>
       
         <button onClick={() => this.props.callbackHideFun()} style={{padding:"20px"}}>
@@ -161,8 +164,8 @@ class Movie extends Component {
           <div className='img-section'>
             <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=""/>
             <div className="movie-book-watch">
-             <a href="">Bookmark</a>
-             <a href="">Add to Watchlist</a>
+             <i className="fa fal fa-bookmark">Bookmark</i>
+             <i className="watchlist fa fa-star-o">Add to Watch List</i>
             </div> 
           <div className="movie-related-movies">
               <h3 className="movie-related-title">Related Movies</h3>
@@ -215,19 +218,27 @@ class Movie extends Component {
               />
             </div>
             <div className="movie-user-score">User score</div>
-            <div className="video-player">
+            <div className="video-player" onClick={()=> this.setState({openModal: true})}>
               <i className="fa fas fa-play"></i>
+              <div className="play-video">Play Video</div>
             </div>
               <div className="details">
-                <div>Genres</div>
-                {
-                  this.getGenres(this.state.movie.genres)                  
-                }
-                {/* <div>{movie.genres && movie.genres[0].name}, {movie.genres && movie.genres[1].name}, {movie.genres && movie.genres[2].name}</div> */}
-                <div>Release Year</div>
-                <div>{movie.release_date && movie.release_date}</div>
-                <div>Duration</div>
-                <div>{movie.runtime}</div>
+                <div>
+                  <span>Genres</span>
+                  <span className="generes-value">
+                    {
+                      this.getGenres(this.state.movie.genres)                  
+                    }
+                  </span>
+                </div>
+                <div>
+                  <span>Release Year</span>
+                  <span className="relase-year">{movie.release_date && movie.release_date}</span>
+                </div>
+                <div>
+                  <span>Duration</span>
+                  <span className="duration">{movie.runtime} min</span>
+                </div>
                 
               </div>
             </div>
@@ -238,6 +249,7 @@ class Movie extends Component {
             </div>
             
             <div className="movie-feature-crew">
+            <h3 className="movie-crew-title">Feature Crew</h3>
               {
                 this.state.movie.credits &&
                 this.state.movie.credits.crew.slice(0, 5)
@@ -248,7 +260,7 @@ class Movie extends Component {
                   </div>
                 ))
               }
-              <h3 className="movie-crew-title">Feature Crew</h3>
+              
               
             </div>
 
@@ -261,7 +273,7 @@ class Movie extends Component {
                 .map((actor) => 
                   <div key={actor.id} className="cast-row">                    
                     <img src={`https://image.tmdb.org/t/p/w${92}${actor.profile_path}` } />                    
-                    <div>{actor.name}</div>
+                    <div className="actor-name">{actor.name}</div>
                   </div>
                 )
               }  
@@ -272,7 +284,7 @@ class Movie extends Component {
 
             <div className="movie-backgrounds">
               <h3 className="movie-backgrounds-title">Backgrounds</h3>
-              <div style={{display:"flex"}}>
+              <div className="movie-back">
               {
                 this.state.movie.images && 
                 this.state.movie.images.backdrops.slice(0, 2)
