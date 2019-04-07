@@ -1,15 +1,15 @@
 {
-  "main.css": "/test/static/css/main.c8d37c58.chunk.css",
-  "main.js": "/test/static/js/main.acb17148.chunk.js",
-  "main.js.map": "/test/static/js/main.acb17148.chunk.js.map",
-  "runtime~main.js": "/test/static/js/runtime~main.eded8796.js",
-  "runtime~main.js.map": "/test/static/js/runtime~main.eded8796.js.map",
-  "static/js/2.f30c1ff7.chunk.js": "/test/static/js/2.f30c1ff7.chunk.js",
-  "static/js/2.f30c1ff7.chunk.js.map": "/test/static/js/2.f30c1ff7.chunk.js.map",
-  "index.html": "/test/index.html",
-  "precache-manifest.d117de93973ef34a8b68c32b6d61331d.js": "/test/precache-manifest.d117de93973ef34a8b68c32b6d61331d.js",
-  "service-worker.js": "/test/service-worker.js",
-  "static/css/main.c8d37c58.chunk.css.map": "/test/static/css/main.c8d37c58.chunk.css.map",
-  "static/media/eiga.svg": "/test/static/media/eiga.06ef5d3f.svg",
-  "static/media/eiga_kanji.svg": "/test/static/media/eiga_kanji.17dfeddb.svg"
+  "main.css": "/react-movie-project/static/css/main.5a04a142.chunk.css",
+  "main.js": "/react-movie-project/static/js/main.5fd1270c.chunk.js",
+  "main.js.map": "/react-movie-project/static/js/main.5fd1270c.chunk.js.map",
+  "runtime~main.js": "/react-movie-project/static/js/runtime~main.331f6cc9.js",
+  "runtime~main.js.map": "/react-movie-project/static/js/runtime~main.331f6cc9.js.map",
+  "static/js/2.9f42afa7.chunk.js": "/react-movie-project/static/js/2.9f42afa7.chunk.js",
+  "static/js/2.9f42afa7.chunk.js.map": "/react-movie-project/static/js/2.9f42afa7.chunk.js.map",
+  "index.html": "/react-movie-project/index.html",
+  "precache-manifest.79c9682e3130354fefbd71edbbc93221.js": "/react-movie-project/precache-manifest.79c9682e3130354fefbd71edbbc93221.js",
+  "service-worker.js": "/react-movie-project/service-worker.js",
+  "static/css/main.5a04a142.chunk.css.map": "/react-movie-project/static/css/main.5a04a142.chunk.css.map",
+  "static/media/eiga.svg": "/react-movie-project/static/media/eiga.06ef5d3f.svg",
+  "static/media/eiga_kanji.svg": "/react-movie-project/static/media/eiga_kanji.17dfeddb.svg"
 }
